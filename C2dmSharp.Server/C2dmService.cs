@@ -195,9 +195,9 @@ namespace C2dmSharp.Server
         /// <param name="registrationId">Registration ID of the Device</param>
         /// <param name="data">Key/Value Collection of data or 'extras' to send</param>
         /// <param name="collapseKey">Collapse Key</param>
-        public void QueueMessage(string registrationId, NameValueCollection data, string collapseKey)
+        public void QueueMessage(string registrationId, NameValueCollection data, string collapseKey, object tag)
         {
-            QueueMessage(registrationId, data, collapseKey, null);
+					QueueMessage(registrationId, data, collapseKey, null, new { });
         }
 
         /// <summary>
@@ -207,14 +207,15 @@ namespace C2dmSharp.Server
         /// <param name="data">Key/Value Collection of data or 'extras' to send</param>
         /// <param name="collapseKey">Collapse Key</param>
         /// <param name="delayWhileIdle">If true, C2DM will only be delivered once the device's screen is on</param>
-        public void QueueMessage(string registrationId, NameValueCollection data, string collapseKey, bool? delayWhileIdle)
+        public void QueueMessage(string registrationId, NameValueCollection data, string collapseKey, bool? delayWhileIdle, object tag)
         {
             QueueMessage(new C2dmMessage()
             {
                 RegistrationId = registrationId,
                 Data = data,
                 CollapseKey = collapseKey,
-                DelayWhileIdle = delayWhileIdle
+                DelayWhileIdle = delayWhileIdle,
+								Tag = tag
             });
         }
 

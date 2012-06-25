@@ -17,6 +17,7 @@ namespace C2dmSharp.Server
 			this.CollapseKey = string.Empty;
 			this.Data = new NameValueCollection();
 			this.DelayWhileIdle = null;
+			this.Tag = null;
 		}
 
 		/// <summary>
@@ -32,6 +33,12 @@ namespace C2dmSharp.Server
 		/// Only the latest message with the same collapse key will be delivered
 		/// </summary>
 		public string CollapseKey
+		{
+			get;
+			set;
+		}
+
+		public object Tag
 		{
 			get;
 			set;
