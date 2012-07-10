@@ -1,0 +1,12 @@
+bin
+obj
+*.user
+*.suo
+Thumbs.db
+Media/*
+*Publish.xml
+Quartz.NET/SFS*
+Quartz.NET/Bliss*
+Quartz.NET/C2dmSharp*
+
+server-data/*.txt
